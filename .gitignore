@@ -1,0 +1,35 @@
+
+# Variables de entorno y credenciales
+.env
+.env.*
+!.env.example
+
+# Ejecutables y archivos compilados de Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Cobertura de pruebas
+coverage/
+
+# Configuración local de editores
+.vscode/
+.idea/
+
+# Archivos temporales y logs
+*.log
+tmp/
+temp/
+
+# Archivos locales de base de datos
+*.db
+*.sqlite
+*.sqlite3
+
+# Sistema operativo
+.DS_Store
+Thumbs.db

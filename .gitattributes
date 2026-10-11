@@ -1,0 +1,36 @@
+
+# Detectar archivos de texto y normalizar saltos de línea
+* text=auto
+
+# Código fuente y documentación: utilizar LF
+*.go       text eol=lf
+*.mod      text eol=lf
+*.sum      text eol=lf
+*.html     text eol=lf
+*.css      text eol=lf
+*.js       text eol=lf
+*.json     text eol=lf
+*.sql      text eol=lf
+*.md       text eol=lf
+*.yml      text eol=lf
+*.yaml     text eol=lf
+*.sh       text eol=lf
+
+# Configuración de Git
+.gitignore     text eol=lf
+.gitattributes text eol=lf
+
+# Scripts de Windows
+*.bat      text eol=crlf
+*.cmd      text eol=crlf
+
+# Imágenes y archivos binarios
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.webp     binary
+*.ico      binary
+*.pdf      binary
+*.zip      binary
+
