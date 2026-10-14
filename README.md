@@ -91,3 +91,11 @@ El diseño técnico, los servicios de Azure, el presupuesto y las etapas del pro
 **Estado actual:** Fase 0 — Preparación del repositorio.
 
 El desarrollo será incremental, con cambios pequeños y commits que permitan seguir la evolución del proyecto.
+
+Para ejecutar la aplicación localmente, desde la carpeta `frontend` ejecuta:
+
+```bash
+py -m http.server 5500
+```
+
+Y abre `http://localhost:5500` en tu navegador.
