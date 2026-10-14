@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es" data-mode="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tu rincón social en NekoPapata: comparte lecturas, opiniones y capítulos. Perfil de demostración local.">
+  <title>Tu perfil · NekoPapata</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/perfil.css">
+  <script src="./js/theme.js"></script>
+  <script src="./js/perfil-data.js" defer></script>
+  <script src="./js/lector-data.js" defer></script>
+  <script src="./js/perfil.js" defer></script>
+</head>
+<body class="profile-page">
+<a class="skip" href="#contenido">Saltar al perfil</a>
+<header class="header social-header">
+  <a class="brand" href="./index.html" aria-label="NekoPapata, inicio"><img src="./assets/images/logo.jpg" alt="" width="48" height="48"><span>NekoPapata<small>Las historias también nos conectan</small></span></a>
+  <nav aria-label="Navegación principal"><a href="./index.html">Inicio</a><a href="./biblioteca.html">Biblioteca</a><a href="./perfil.html" aria-current="page">Mi perfil</a></nav>
+</header>
+<div class="demo-banner">PERFIL DEMO <span id="profile-demo-message">Cambios y publicaciones guardados solo en este navegador. Nada se publica en Internet ni se envía a Azure.</span></div>
+<main id="contenido" class="social-shell" tabindex="-1">
+  <section class="social-hero" aria-labelledby="profile-name">
+    <div class="social-cover">
+      <img id="profile-cover" src="./assets/images/perfil-portada.svg" alt="Portada del perfil: montañas y una ciudad junto al agua" width="1440" height="480">
+      <span class="social-cover-caption">UN RINCÓN PARA TUS HISTORIAS</span>
+      <button class="social-cover-edit secondary" type="button" data-owner data-edit="cover" hidden>Cambiar portada</button>
+    </div>
+    <div class="social-identity">
+      <div class="social-avatar-wrap"><img id="profile-avatar" class="social-avatar" src="./assets/images/logo.jpg" width="160" height="160" alt="Foto de perfil"><button type="button" class="secondary" data-owner data-edit="avatar" hidden>Cambiar foto</button></div>
+      <div class="social-name"><p class="eyebrow" id="profile-view-label">TU ESPACIO</p><h1 id="profile-name">Lector invitado</h1><p class="muted">@usuario_demo <span aria-hidden="true">·</span> Comunidad NekoPapata</p><p id="profile-bio"></p></div>
+      <div class="social-profile-actions"><button class="profile-button" type="button" data-owner data-edit="details" hidden>Editar perfil</button><a class="secondary" id="profile-view-switch" href="./perfil.html?vista=publico">Ver como visitante</a></div>
+    </div>
+    <nav class="social-tabs" aria-label="Secciones del perfil"><button type="button" data-section="biografia" aria-pressed="true" aria-controls="biografia">Biografía</button><button type="button" data-section="informacion" aria-pressed="false" aria-controls="informacion">Información</button><button type="button" data-section="fotos" aria-pressed="false" aria-controls="fotos">Fotos</button><span id="profile-post-count" class="small muted"></span></nav>
+  </section>
+  <p id="profile-status" class="social-status small muted" role="status">Cargando perfil…</p>
+  <section id="profile-error" class="panel" hidden><h2>No pudimos abrir este perfil</h2><p>Intenta cargar el perfil de prueba de nuevo.</p><button class="profile-button" id="retry-profile" type="button">Reintentar</button></section>
+  <div class="social-columns">
+    <aside class="social-sidebar" aria-label="Presentación y comunidad">
+      <section class="panel"><p class="eyebrow">UN POCO SOBRE MÍ</p><h2>Presentación</h2><p class="social-intro" data-profile-bio></p><dl class="social-facts"><dt>Mi lugar</dt><dd data-profile-location></dd><dt>Me gusta leer</dt><dd data-profile-genre></dd><dt>En esta comunidad</dt><dd>Desde octubre de 2026 · Demo</dd></dl><button class="text-button" type="button" data-owner data-edit="details" hidden>Editar presentación</button></section>
+      <section class="panel"><div class="section-heading"><h2>Compañeros de lectura</h2></div><span class="tag">Personas ficticias</span><div class="social-friends"><div><span class="friend-portrait friend-luna">L</span><strong>Luna</strong></div><div><span class="friend-portrait friend-nico">N</span><strong>Nico</strong></div><div><span class="friend-portrait friend-sol">S</span><strong>Sol</strong></div><div><span class="friend-portrait friend-mar">M</span><strong>Mar</strong></div><div><span class="friend-portrait friend-alba">A</span><strong>Alba</strong></div><div><span class="friend-portrait friend-leo">L</span><strong>Leo</strong></div></div><p class="small muted">Las amistades y los mensajes estarán disponibles al conectar las cuentas.</p></section>
+    </aside>
+    <div class="social-content">
+      <section id="biografia" aria-labelledby="wall-title">
+        <h2 class="sr-only" id="wall-title">Muro de publicaciones</h2>
+        <section class="panel social-composer" data-owner hidden aria-labelledby="composer-title">
+          <div class="social-composer-heading"><img data-avatar src="./assets/images/logo.jpg" width="44" height="44" alt=""><div><h2 id="composer-title">¿Qué estás leyendo?</h2><p class="small muted">Una idea, una opinión o un capítulo para compartir.</p></div></div>
+          <form id="post-form">
+            <fieldset class="composer-types"><legend class="sr-only">Tipo de publicación</legend><label><input type="radio" name="post-type" value="post" checked> Publicación</label><label><input type="radio" name="post-type" value="opinion"> Opinión</label><label><input type="radio" name="post-type" value="chapter"> Capítulo</label></fieldset>
+            <label class="sr-only" for="post-text">Texto de la publicación</label><textarea id="post-text" rows="4" maxlength="2000" placeholder="Comparte algo con quienes visiten tu perfil…" aria-describedby="post-counter post-privacy"></textarea>
+            <div id="chapter-picker" class="social-chapter-picker" hidden><label for="post-chapter">Enlazar un capítulo de Entre estaciones</label><select id="post-chapter"><option value="11">11 · La carta olvidada</option><option value="12" selected>12 · El tren de medianoche</option><option value="13">13 · La ciudad del otro lado</option></select><p class="small muted">Solo estos capítulos están disponibles en la prueba.</p></div>
+            <div class="composer-footer"><p id="post-privacy" class="small muted">Visible en la vista previa del perfil. Solo local.</p><span id="post-counter" class="small muted">0 / 2000</span><button class="profile-button" id="publish-post" type="submit">Publicar</button></div>
+            <p id="post-status" class="small muted" role="status"></p>
+          </form>
+        </section>
+        <div class="social-wall-heading"><h2>Publicaciones</h2><label class="sr-only" for="post-filter">Filtrar publicaciones</label><select id="post-filter"><option value="all">Todas</option><option value="post">Publicaciones</option><option value="opinion">Opiniones</option><option value="chapter">Capítulos</option></select></div>
+        <div id="profile-feed" class="social-feed" aria-busy="true"></div>
+        <section id="feed-empty" class="panel" hidden><h3>Aún no hay publicaciones de este tipo</h3><p class="muted">Aquí aparecerán las historias y opiniones que se compartan en este perfil.</p></section>
+      </section>
+      <section id="informacion" class="panel social-information" aria-labelledby="information-title" hidden><p class="eyebrow">DETRÁS DE LAS HISTORIAS</p><h2 id="information-title">Información del perfil</h2><dl class="social-facts"><dt>Nombre</dt><dd data-profile-name></dd><dt>Presentación</dt><dd data-profile-bio></dd><dt>Mi lugar</dt><dd data-profile-location></dd><dt>Lecturas favoritas</dt><dd data-profile-genre></dd><dt>Apariencia para visitantes</dt><dd><span id="profile-color-sample" class="profile-color-sample" aria-hidden="true"></span>El color elegido por este perfil, sin modificar tu tema general.</dd></dl><p class="small muted">Esta es una vista previa local, no un perfil publicado ni una cuenta autenticada.</p></section>
+      <section id="fotos" class="panel" aria-labelledby="photos-title" hidden><div class="section-heading"><h2 id="photos-title">Fotos del perfil</h2><span class="tag">Solo local</span></div><p class="small muted">La foto y la portada que acompañan este perfil.</p><div class="social-photo-grid"><figure><img id="album-avatar" src="./assets/images/logo.jpg" alt="Foto del perfil" width="320" height="320"><figcaption>Foto de perfil</figcaption></figure><figure><img id="album-cover" src="./assets/images/perfil-portada.svg" alt="Portada del perfil" width="1440" height="480"><figcaption>Foto de portada</figcaption></figure></div><button class="profile-button" type="button" data-owner data-edit="avatar" hidden>Cambiar fotos</button></section>
+    </div>
+    <aside class="social-extras" aria-label="Lecturas destacadas">
+      <section class="panel"><p class="eyebrow">ENTRE PÁGINAS</p><h2>En mi mesita</h2><a class="social-book" href="./lector.html?historia=entre-estaciones&amp;capitulo=12"><span class="social-book-cover">ENTRE<br>ESTACIONES</span><strong>Entre estaciones</strong><span class="small muted">Capítulo 12 · Lectura demo</span></a><p class="small muted">Un tren, una carta y una historia para quedarse un rato más.</p></section>
+      <section class="panel"><h2>Más historias, más conexiones</h2><p class="small muted">Descubre algo nuevo y vuelve para contar qué te pareció.</p><a class="text-button social-explore" href="./biblioteca.html">Explorar la biblioteca →</a></section>
+    </aside>
+  </div>
+</main>
+<dialog id="edit-profile-dialog" class="social-editor" aria-labelledby="edit-profile-title">
+  <form id="edit-profile-form">
+    <div class="section-heading"><h2 id="edit-profile-title">Hazlo tuyo</h2><button class="text-button" type="button" id="cancel-profile-edit">Cancelar</button></div>
+    <p class="small muted">Tu presentación, tus fotos y el color que verán quienes visiten tu perfil. En esta prueba todo se guarda solo aquí.</p>
+    <div class="social-editor-fields"><label for="edit-name">Nombre</label><input id="edit-name" maxlength="60" required autocomplete="off"><label for="edit-bio">Presentación</label><textarea id="edit-bio" rows="3" maxlength="280"></textarea><label for="edit-location">Mi lugar</label><input id="edit-location" maxlength="80" autocomplete="off"><label for="edit-genre">Me gusta leer</label><input id="edit-genre" maxlength="80" autocomplete="off"></div>
+    <fieldset><legend>Color de tu perfil</legend><div class="profile-color-options"><button type="button" data-profile-color="#376c96" style="--sample:#376c96" aria-label="Perfil azul" aria-pressed="false"></button><button type="button" data-profile-color="#71558c" style="--sample:#71558c" aria-label="Perfil lavanda" aria-pressed="false"></button><button type="button" data-profile-color="#55664e" style="--sample:#55664e" aria-label="Perfil verde" aria-pressed="false"></button><button type="button" data-profile-color="#a14f54" style="--sample:#a14f54" aria-label="Perfil rosa" aria-pressed="false"></button><label for="profile-color">Personalizado <input id="profile-color" type="color" value="#376c96"></label></div><p class="small muted">No cambia el tema del menú ni el del lector.</p></fieldset>
+    <div class="social-image-inputs"><div><img id="avatar-preview" width="100" height="100" alt="Vista previa de la foto"><label for="avatar-upload">Foto de perfil</label><input id="avatar-upload" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="image-help"></div><div><img id="cover-preview" width="300" height="100" alt="Vista previa de la portada"><label for="cover-upload">Foto de portada</label><input id="cover-upload" type="file" accept="image/jpeg,image/png,image/webp" aria-describedby="image-help"></div></div>
+    <p id="image-help" class="small muted">JPG, PNG o WebP, hasta 5 MB. Recorte centrado: foto cuadrada y portada panorámica. Las imágenes se reducen y se guardan localmente; no se suben a ningún servidor.</p>
+    <p id="edit-status" class="small muted" role="status"></p>
+    <button id="save-profile" class="profile-button" type="submit">Guardar cambios</button>
+  </form>
+</dialog>
+<footer>NekoPapata <span>·</span> Historias que también nos conectan. <span>Perfil de demostración.</span></footer>
+<noscript><p class="noscript">Activa JavaScript para cargar el perfil, personalizarlo y probar el muro de publicaciones.</p></noscript>
+</body>
+</html>

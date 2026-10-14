@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100">
+  <defs><linearGradient id="desk" x2="1" y2="1"><stop stop-color="#7c8a76"/><stop offset="1" stop-color="#354e4c"/></linearGradient></defs>
+  <rect width="800" height="1100" fill="#eee9dc"/>
+  <text x="46" y="46" font-family="Georgia,serif" font-size="16" letter-spacing="4" fill="#52625d">ENTRE ESTACIONES</text><text x="754" y="46" text-anchor="end" font-family="sans-serif" font-size="12" letter-spacing="2" fill="#52625d">LECTURA DEMO</text>
+  <rect x="28" y="72" width="744" height="730" rx="4" fill="url(#desk)"/>
+  <path d="M28 199h744M28 401h744M28 625h744" stroke="#263f40" stroke-width="3" opacity=".3"/>
+  <path d="M570 72v253M570 188h202" stroke="#bec6ac" stroke-width="12"/>
+  <path d="M578 198l194 79v215L468 326z" fill="#e9d6a1" opacity=".12"/>
+  <g transform="rotate(-8 400 439)">
+    <rect x="158" y="212" width="476" height="470" rx="5" fill="#233a3c" opacity=".3"/>
+    <rect x="144" y="198" width="476" height="470" rx="5" fill="#f4ead2"/>
+    <path d="M162 218h440v432H162z" fill="none" stroke="#d9caaa"/>
+    <text x="190" y="275" font-family="Georgia,serif" font-size="20" fill="#797561">Para quien aún quiera encontrarla:</text>
+    <text x="190" y="359" font-family="Georgia,serif" font-size="27" fill="#344e4c"><tspan x="190">Si encuentras esta carta,</tspan><tspan x="190" dy="43">aún estás a tiempo.</tspan></text>
+    <path d="M191 458h295M191 481h332M191 504h272" stroke="#bdb499" stroke-width="3"/>
+    <path d="M417 587q26-35 37 0t40-8 38-2" fill="none" stroke="#778774" stroke-width="3"/>
+    <circle cx="231" cy="577" r="27" fill="#a36660"/><path d="M220 587l11-25 11 25m-18-7h14" fill="none" stroke="#ead4b4" stroke-width="2"/>
+  </g>
+  <g transform="rotate(9 518 705)"><rect x="362" y="641" width="317" height="115" rx="10" fill="#d9bd8b"/><path d="M588 650v98" stroke="#826f53" stroke-dasharray="4 5"/><text x="388" y="678" font-family="sans-serif" font-size="13" letter-spacing="2" fill="#3a514d">ENTRE ESTACIONES</text><text x="388" y="712" font-family="Georgia,serif" font-size="26" fill="#3a514d">Andén 03</text><text x="388" y="738" font-family="sans-serif" font-size="12" letter-spacing="2" fill="#3a514d">SOLO IDA</text><text x="617" y="711" font-family="Georgia,serif" font-size="27" fill="#3a514d">N</text></g>
+  <rect x="28" y="826" width="744" height="202" rx="4" fill="#d8decb"/>
+  <path d="M28 983q156-136 307 0t437-36v81H28z" fill="#b6c2aa"/>
+  <text x="400" y="899" text-anchor="middle" font-family="Georgia,serif" font-size="26" fill="#344e4c"><tspan x="400">Hay lugares que solo existen</tspan><tspan x="400" dy="43">cuando decides buscarlos.</tspan></text>
+  <text x="400" y="1070" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="3" fill="#52625d">NEKOPAPATA · ILUSTRACIÓN DE PRUEBA</text>
+</svg>

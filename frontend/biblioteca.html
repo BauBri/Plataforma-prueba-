@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es" data-mode="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explora la biblioteca de prueba de NekoPapata: historias, favoritos, historial y listas a tu manera.">
+  <title>Biblioteca · NekoPapata</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/biblioteca.css">
+  <script src="./js/theme.js"></script>
+  <script src="./js/biblioteca-data.js" defer></script>
+  <script src="./js/biblioteca.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="header library-header">
+  <a class="brand" href="./index.html" aria-label="NekoPapata, inicio"><img src="./assets/images/logo.jpg" alt="" width="48" height="48"><span>NekoPapata<small>Historias que se quedan contigo</small></span></a>
+  <form class="search" role="search" id="library-search-form"><label class="sr-only" for="library-search" id="search-label">Buscar en la biblioteca</label><span aria-hidden="true">⌕</span><input id="library-search" type="search" placeholder="Buscar por título o autor…" autocomplete="off" disabled><button type="submit" id="search-submit" disabled>Buscar</button></form>
+  <a class="secondary library-home" href="./index.html">Volver al menú</a>
+</header>
+<div class="demo-banner">BIBLIOTECAS DEMO <span>Historias, favoritos, listas y actividad ficticios. La búsqueda y los filtros sí funcionan; no se guarda actividad real.</span></div>
+<div class="library-layout">
+  <aside class="library-sidebar" aria-label="Navegación y apariencia">
+    <nav class="panel" aria-label="Bibliotecas">
+      <p class="eyebrow">TU ESPACIO</p><h2>Bibliotecas</h2>
+      <a class="nav-link" data-view="general" href="./biblioteca.html">Biblioteca general</a>
+      <a class="nav-link" data-view="continuar" href="./biblioteca.html?vista=continuar">Continuar lectura</a>
+      <a class="nav-link" data-view="favoritos" href="./biblioteca.html?vista=favoritos">Favoritos</a>
+      <a class="nav-link" data-view="historial" href="./biblioteca.html?vista=historial">Historial</a>
+      <a class="nav-link" data-view="listas" href="./biblioteca.html?vista=listas">Mis listas</a>
+      <hr><a class="nav-link" href="./perfil.html">Mi perfil</a><p class="small muted">Cada historia tiene su momento. Encuentra el tuyo.</p>
+    </nav>
+    <details class="panel library-preferences" id="personalizar">
+      <summary>Preferencias</summary>
+      <p class="small muted">El tema se comparte con el menú y el lector.</p>
+      <fieldset><legend>Modo de lectura</legend><div class="modes"><label><input type="radio" name="mode" value="light" checked> Claro</label><label><input type="radio" name="mode" value="dark"> Oscuro</label><label><input type="radio" name="mode" value="system"> Sistema</label></div></fieldset>
+      <fieldset><legend>Color de acento</legend><div class="swatches"><button class="swatch" style="--swatch:#55664e" data-color="#55664e" aria-label="Verde bosque" aria-pressed="true"></button><button class="swatch" style="--swatch:#71558c" data-color="#71558c" aria-label="Lavanda" aria-pressed="false"></button><button class="swatch" style="--swatch:#a14f54" data-color="#a14f54" aria-label="Rosa arcilla" aria-pressed="false"></button><button class="swatch" style="--swatch:#376c96" data-color="#376c96" aria-label="Azul" aria-pressed="false"></button></div><label class="custom-color" for="accent">Tu propio color <input type="color" id="accent" value="#55664e"></label></fieldset>
+      <button id="reset" class="text-button">Restablecer apariencia</button><p id="theme-status" class="small muted" role="status"></p>
+    </details>
+  </aside>
+  <main id="contenido" class="library-main" tabindex="-1">
+    <div class="library-heading"><div><p class="eyebrow">HISTORIAS A TU RITMO</p><h1 id="library-title">Biblioteca general</h1><p class="muted" id="library-description">Todas las historias de prueba, en un solo lugar.</p></div><span class="tag">Contenido demo</span></div>
+    <section class="panel library-filters" id="genre-filters" aria-labelledby="genres-title" hidden><h2 id="genres-title">Explorar por género</h2><p class="small muted">Combina un género con la búsqueda para encontrar tu próxima historia.</p><div id="genre-options" class="filter-options" role="group" aria-label="Filtrar por género"></div></section>
+    <section class="panel library-filters" id="list-filters" aria-labelledby="lists-title" hidden><h2 id="lists-title">Tus listas de ejemplo</h2><div id="list-options" class="filter-options" role="group" aria-label="Elegir lista"></div><p class="small muted">Colecciones ficticias. Crear y editar listas estará disponible más adelante.</p></section>
+    <div class="library-results"><p id="results-status" class="small muted" role="status">Cargando historias…</p><button id="clear-filters" class="text-button" type="button" hidden>Limpiar búsqueda y filtros</button></div>
+    <section id="library-grid" class="library-grid" aria-labelledby="library-title" aria-busy="true"></section>
+    <section id="library-empty" class="panel library-empty" aria-labelledby="empty-title" hidden><h2 id="empty-title">No encontramos historias</h2><p class="muted">Prueba otro título, autor o selección. Solo buscamos dentro de esta biblioteca de prueba.</p></section>
+    <section id="library-error" class="panel library-empty" aria-labelledby="error-title" hidden><h2 id="error-title">No pudimos cargar esta biblioteca</h2><p class="muted">Intenta cargar los datos de prueba de nuevo.</p><button class="primary" id="retry-library" type="button">Reintentar</button></section>
+  </main>
+</div>
+<footer>NekoPapata <span>·</span> Hecho para disfrutar historias. <span>Interfaz de demostración.</span></footer>
+<dialog id="story-dialog" class="library-dialog" aria-labelledby="story-dialog-title">
+  <span class="tag">Ficha de prueba</span><h2 id="story-dialog-title"></h2><p id="story-dialog-author" class="small muted"></p><p id="story-dialog-description"></p><p id="story-dialog-genres" class="small muted"></p><p id="story-dialog-status" class="small muted"></p>
+  <div class="library-dialog-actions"><a id="story-reader-link" class="primary" hidden>Abrir lector de prueba</a><form method="dialog"><button class="secondary" autofocus>Cerrar</button></form></div>
+</dialog>
+<noscript><p class="noscript">Activa JavaScript para ver las historias y utilizar la búsqueda y los filtros de las bibliotecas.</p></noscript>
+</body>
+</html>

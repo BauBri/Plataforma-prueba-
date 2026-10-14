@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es" data-mode="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Lector de prueba de NekoPapata: historias a tu ritmo, con tu apariencia favorita.">
+  <title>Lector · NekoPapata</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/lector.css">
+  <script src="./js/theme.js"></script>
+  <script src="./js/lector-data.js" defer></script>
+  <script src="./js/lector.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="header reader-header">
+  <a class="brand" href="./index.html" aria-label="NekoPapata, inicio"><img src="./assets/images/logo.jpg" alt="" width="48" height="48"><span>NekoPapata<small>Historias que se quedan contigo</small></span></a>
+  <span class="reader-header-note muted">Una historia. Un pequeño descanso.</span>
+  <a class="secondary" href="./index.html#lectura">Volver al menú</a>
+</header>
+<div class="demo-banner">LECTOR DEMO <span>Capítulos 11–13 de una historia ficticia, con ilustraciones locales reutilizadas. Sin conexión a Azure.</span></div>
+<div class="reader-layout">
+  <aside class="reader-sidebar" aria-label="Historia y capítulos">
+    <section class="panel">
+      <p class="eyebrow">ESTÁS LEYENDO</p>
+      <div class="cover cover-main reader-cover" role="img" aria-label="Portada abstracta de Entre estaciones"><span>ENTRE<br>ESTACIONES</span><small>NEKOPAPATA · DEMO</small></div>
+      <h2 id="story-title">Entre estaciones</h2>
+      <p id="story-author" class="small muted">A. Sol · Historia ficticia</p>
+      <p><span class="tag">Fantasía · Aventura</span></p>
+      <hr>
+      <label class="reader-label" for="chapter-select">Elige un capítulo</label>
+      <select id="chapter-select" disabled><option>Cargando capítulos…</option></select>
+      <p class="small muted">Solo estos tres capítulos están disponibles en la prueba.</p>
+      <a class="text-button reader-back" href="./biblioteca.html">Explorar más historias →</a>
+    </section>
+  </aside>
+  <main id="contenido" class="reader-main" tabindex="-1">
+    <section class="panel reader-intro" aria-labelledby="chapter-title">
+      <div class="section-heading"><p class="eyebrow" id="chapter-number">TU MOMENTO DE LECTURA</p><span class="tag">Demo</span></div>
+      <h1 id="chapter-title">Preparando tu historia…</h1>
+      <p class="muted" id="chapter-description">Lectura vertical, sin prisa.</p>
+      <nav class="chapter-nav" aria-label="Navegación de capítulos">
+        <button class="secondary" data-direction="previous" disabled>← Anterior</button>
+        <button class="secondary" id="preferences-toggle" type="button" aria-expanded="false" aria-controls="personalizar">Preferencias</button>
+        <button class="primary" data-direction="next" disabled>Siguiente →</button>
+      </nav>
+      <section class="reader-preferences" id="personalizar" aria-labelledby="preferences-title" hidden>
+        <p class="eyebrow">A TU MANERA</p><h2 id="preferences-title">Preferencias de lectura</h2>
+        <p class="small muted">El mismo tema del menú. Los cambios se guardan en este navegador.</p>
+        <fieldset><legend>Modo de lectura</legend><div class="modes"><label><input type="radio" name="mode" value="light" checked> Claro</label><label><input type="radio" name="mode" value="dark"> Oscuro</label><label><input type="radio" name="mode" value="system"> Sistema</label></div></fieldset>
+        <fieldset><legend>Color de acento</legend><div class="swatches"><button class="swatch" style="--swatch:#55664e" data-color="#55664e" aria-label="Verde bosque" aria-pressed="true"></button><button class="swatch" style="--swatch:#71558c" data-color="#71558c" aria-label="Lavanda" aria-pressed="false"></button><button class="swatch" style="--swatch:#a14f54" data-color="#a14f54" aria-label="Rosa arcilla" aria-pressed="false"></button><button class="swatch" style="--swatch:#376c96" data-color="#376c96" aria-label="Azul" aria-pressed="false"></button></div><label class="custom-color" for="accent">Tu propio color <input type="color" id="accent" value="#55664e"></label></fieldset>
+        <button id="reset" class="text-button">Restablecer apariencia</button>
+        <p id="theme-status" class="small muted" role="status"></p>
+        <hr>
+        <label class="reader-label" for="page-width">Ancho de página</label>
+        <select id="page-width"><option value="comfortable">Cómodo</option><option value="wide">Amplio</option></select>
+        <p class="small muted">Las ilustraciones conservan sus colores originales al cambiar el tema.</p>
+      </section>
+    </section>
+    <p id="reader-status" class="reader-status muted" role="status">Cargando capítulo de prueba…</p>
+    <section id="reader-error" class="panel" aria-labelledby="error-title" hidden>
+      <h2 id="error-title">No pudimos abrir este capítulo</h2>
+      <p id="error-message" class="muted"></p>
+      <a class="primary reader-recover" href="./lector.html?historia=entre-estaciones&amp;capitulo=12">Abrir capítulo de prueba</a>
+    </section>
+    <section id="chapter-pages" class="chapter-pages" aria-label="Páginas del capítulo" aria-busy="true"></section>
+    <section id="chapter-end" class="panel chapter-end" aria-labelledby="end-title" hidden>
+      <p class="eyebrow">UNA PAUSA ENTRE HISTORIAS</p>
+      <h2 id="end-title">Llegaste al final del capítulo</h2>
+      <p class="muted" id="end-message"></p>
+      <nav class="chapter-nav" aria-label="Continuar después del capítulo">
+        <button class="secondary" data-direction="previous" disabled>← Anterior</button>
+        <button class="primary" data-direction="next" disabled>Siguiente →</button>
+      </nav>
+      <a class="text-button" href="#contenido">Volver al inicio del capítulo ↑</a>
+    </section>
+  </main>
+  <aside class="reader-sidebar reader-comments" aria-label="Comentarios del capítulo">
+    <section class="panel" aria-labelledby="comments-title">
+      <p class="eyebrow">ENTRE LECTORES</p>
+      <div class="section-heading"><h2 id="comments-title">Comentarios</h2><span class="tag">Próximamente</span></div>
+      <p class="small muted">Un espacio para compartir lo que te dejó este capítulo.</p>
+      <div class="comments-empty"><h3>La conversación empieza aquí</h3><p class="small muted">Aquí aparecerán los comentarios cuando la plataforma esté conectada.</p></div>
+      <label class="reader-label" for="comment-draft">Tu comentario</label>
+      <textarea id="comment-draft" rows="4" placeholder="¿Qué te pareció este capítulo?" aria-describedby="comments-status" disabled></textarea>
+      <button class="primary" type="button" disabled>Publicar comentario</button>
+      <p id="comments-status" class="small muted">Vista de prueba: todavía no se pueden escribir ni publicar comentarios.</p>
+    </section>
+  </aside>
+</div>
+<footer>NekoPapata <span>·</span> Hecho para disfrutar historias. <span>Interfaz de demostración.</span></footer>
+<noscript><p class="noscript">Activa JavaScript para cargar los capítulos de prueba y compartir el tema del menú.</p></noscript>
+</body>
+</html>

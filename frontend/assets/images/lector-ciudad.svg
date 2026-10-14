@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1100" viewBox="0 0 800 1100">
+  <defs>
+    <linearGradient id="dawn" x2="0" y2="1"><stop stop-color="#36485c"/><stop offset=".6" stop-color="#9b9c94"/><stop offset="1" stop-color="#e0c69d"/></linearGradient>
+    <pattern id="lights" width="49" height="64" patternUnits="userSpaceOnUse"><rect x="15" y="16" width="17" height="28" rx="8" fill="#ead4a2"/></pattern>
+  </defs>
+  <rect width="800" height="1100" fill="#eee9dc"/>
+  <text x="46" y="46" font-family="Georgia,serif" font-size="16" letter-spacing="4" fill="#52625d">ENTRE ESTACIONES</text><text x="754" y="46" text-anchor="end" font-family="sans-serif" font-size="12" letter-spacing="2" fill="#52625d">LECTURA DEMO</text>
+  <rect x="28" y="72" width="744" height="956" rx="4" fill="url(#dawn)"/>
+  <g fill="#e9ddc6"><circle cx="148" cy="190" r="2"/><circle cx="327" cy="260" r="2"/><circle cx="536" cy="142" r="2"/><circle cx="680" cy="300" r="2"/></g>
+  <circle cx="614" cy="247" r="48" fill="#efe5c8" opacity=".8"/>
+  <path d="M28 526l121-165 120 131 110-187 135 171 113-133 145 166v420H28z" fill="#6e8582"/>
+  <path d="M28 609l141-117 147 117 208-166 248 137v375H28z" fill="#526e70"/>
+  <path d="M59 791V594l79-51 79 51v197m19 0V519l64-72 65 72v272m27 0V559l81-66 81 66v232m23 0V612l82-71 82 71v179" fill="#b3b9a4" stroke="#314e54" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M66 614h144v177H66zm177-77h114v254H243zm158 42h145v212H401zm185 51h146v161H586z" fill="url(#lights)"/>
+  <path d="M28 810q200-53 360-11t384-7v134H28z" fill="#354f53"/>
+  <path d="M28 913q206-81 411-7t333-25v147H28z" fill="#223d44"/>
+  <path d="M376 1028q8-92 119-146t-61-89" fill="none" stroke="#adac8f" stroke-width="28"/>
+  <g fill="#172f39"><circle cx="237" cy="853" r="24"/><path d="M217 875q25-13 44 0l21 85h-83z"/><path d="M215 953l-10 54h21l12-54 6 54h20l-4-54z"/></g>
+  <path d="M213 878q27 12 50-4l37 17-77 7z" fill="#d8b98c"/>
+  <rect x="63" y="115" width="430" height="74" rx="3" fill="#f8f2e1"/>
+  <text x="88" y="160" font-family="Georgia,serif" font-size="25" fill="#344e4c">Y al otro lado de la noche…</text>
+  <rect x="293" y="350" width="434" height="74" rx="3" fill="#f8f2e1"/>
+  <text x="318" y="394" font-family="Georgia,serif" font-size="25" fill="#344e4c">la ciudad comenzó a despertar.</text>
+  <rect x="408" y="936" width="325" height="55" rx="3" fill="#f8f2e1"/>
+  <text x="430" y="971" font-family="Georgia,serif" font-size="21" fill="#344e4c">El viaje apenas empezaba.</text>
+  <text x="400" y="1070" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="3" fill="#52625d">NEKOPAPATA · ILUSTRACIÓN DE PRUEBA</text>
+</svg>
